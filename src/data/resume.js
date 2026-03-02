@@ -1,9 +1,10 @@
-    export const resume = {
+export const resume = {
   person: {
-    name: "Full Name",
-    title: "CS Applicant • Robotics • AI Projects",
+    name: "Bakhytuly Kuanyshbek",
+    title: "Aspiring 12th grade student from Almaty, Kazakhstan",
+    school: "Nazarbayev Intellectual School Almaty-Medeu",
     location: "Almaty, Kazakhstan",
-    email: "name@email.com",
+    email: "your@email.com",
     phone: "+7 xxx xxx xxxx",
     links: {
       website: "https://example.com",
@@ -12,58 +13,13 @@
     }
   },
 
-  highlight: [
-    "Built X (impact/scale)",
-    "Led Y (team/competition)",
-    "Research interest: Z"
-  ],
+  intro:
+    "Hi, I’m Kuanyshbek. On this website, you’ll learn more about my interests and achievements. I’m passionate about many fields and work on improving in all of them in parallel: graphic design, biomedicine, ecology, AI & entrepreneurship, and robotics. I also love to joke ;)",
 
-  education: [
-    {
-      school: "Nazarbayev Intellectual School (NIS)",
-      degree: "High School Diploma",
-      dates: "2023 — 2026",
-      details: ["Relevant coursework: CS, Math, Physics", "Honors: ..."]
-    }
-  ],
-
-  skills: [
-    "JavaScript", "React", "Python", "Flutter", "C++", "Firebase", "Computer Vision"
-  ],
-
-  projects: [
-    {
-      name: "Project Name",
-      role: "Developer / Co-founder",
-      dates: "2025",
-      links: [{ label: "Demo", url: "https://example.com" }],
-      bullets: [
-        "What you built + metric (users / accuracy / revenue / time saved)",
-        "Tech stack: ...",
-        "Result: award / pilot / deployment"
-      ],
-      tags: ["React", "ML", "Firebase"]
-    }
-  ],
-
-  awards: [
-    {
-      title: "Award / Finalist / Laureate",
-      org: "Organization",
-      year: "2025",
-      details: "1 line what it means"
-    }
-  ],
-
-  activities: [
-    {
-      title: "Robotics Team / Club",
-      role: "Lead / Member",
-      dates: "2023 — 2026",
-      bullets: [
-        "Did X, Y, Z",
-        "Impact metric"
-      ]
-    }
+  interests: [
+    { id: "graphic-design", label: "Graphic design" },
+    { id: "biomedicine", label: "Biomedicine" },
+    { id: "ai-startups", label: "AI and startups" },
+    { id: "robotics", label: "Robotics" }
   ]
 };

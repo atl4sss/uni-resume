@@ -1,19 +1,20 @@
 import { Outlet } from "react-router-dom";
-import Nav from "./Nav";
 import { resume } from "../data/resume";
+import ScrollProgress from "./ScrollProgress";
 
 export default function Layout() {
   const p = resume.person;
 
   return (
     <>
+      <ScrollProgress />
+
       <header className="header">
         <div className="topbar">
           <div className="brand">
             <b>{p.name}</b>
             <span>{p.title}</span>
           </div>
-          <Nav />
         </div>
       </header>
 
@@ -22,8 +23,8 @@ export default function Layout() {
       </main>
 
       <footer className="footer">
-        © {new Date().getFullYear()} {p.name} • built with React
+        © {new Date().getFullYear()} {p.name}
       </footer>
     </>
   );
-}
+} 
