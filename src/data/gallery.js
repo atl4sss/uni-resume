@@ -7,6 +7,7 @@ export const gallery = [
 
   // Graphic design
   { id: "design-1", category: "graphic-design", src: "/photos/design-1.png", alt: "Design photo 1" },
+  { id: "design-2", category: "graphic-design", src: "/photos/design-2.jpeg", alt: "Design photo 2" },
   // { id: "design-2", category: "graphic-design", src: "/photos/design-2.png", alt: "Design photo 2" }, // файла нет
 
   // Biomedicine / internship
@@ -17,4 +18,5 @@ export const gallery = [
   // Startups
   { id: "startup-1", category: "ai-startups", src: "/photos/startup-1.PNG", alt: "Startup photo 1" },
   { id: "startup-2", category: "ai-startups", src: "/photos/startup-2.PNG", alt: "Startup photo 2" },
+  { id: "startup-3", category: "ai-startups", src: "/photos/startup-3.jpeg", alt: "Startup photo 3" },
 ];

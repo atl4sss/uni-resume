@@ -177,7 +177,11 @@ a:hover{ text-decoration:underline; }
   border-top: 1px solid var(--line);
 }
 .item:first-child{ border-top:none; padding-top:0; }
-.item b{ display:block; font-size:15px; }
+/* b is inline by default (don’t break sentences) */
+.item b{ font-weight: 700; }
+
+/* if you need block titles, use a class instead */
+.item .blockTitle{ display:block; font-size:15px; font-weight:700; }
 .item .row{
   display:flex;
   gap:10px;
@@ -993,3 +997,219 @@ html { scroll-behavior: smooth; }
   font-size: 13px;
   line-height: 1.45;
 }
+.gateway{
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.gatewayHead{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap:wrap;
+  padding: 0 2px;
+}
+
+.gatewayTitle{
+  font-weight: 850;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.gatewaySub{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.gatewayGrid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+@media (max-width: 980px){
+  .gatewayGrid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px){
+  .gatewayGrid{ grid-template-columns: 1fr; }
+}
+
+.gatewayCard{
+  border:1px solid var(--line);
+  background: rgba(15,23,42,.45);
+  border-radius: 18px;
+  padding: 14px 14px 12px;
+  text-decoration:none;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  box-shadow: 0 14px 40px rgba(0,0,0,.35);
+  position: relative;
+  overflow:hidden;
+}
+.gatewayCard:hover{
+  transform: translateY(-2px);
+  background: rgba(15,23,42,.55);
+  box-shadow: 0 20px 55px rgba(0,0,0,.45);
+  text-decoration:none;
+}
+
+.gatewayCard::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(260px circle at 30% 20%, rgba(99,102,241,.16), transparent 55%);
+  opacity:.9;
+  pointer-events:none;
+}
+
+.gatewayTop{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  position: relative;
+}
+
+.gatewayEmoji{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid var(--line);
+  background: rgba(15,23,42,.55);
+  font-size: 16px;
+}
+
+.gatewayName{
+  font-weight: 850;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.gatewayDesc{
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+  position: relative;
+}
+
+.gatewayGo{
+  margin-top: 12px;
+  color: rgba(255,255,255,.85);
+  font-size: 13px;
+  font-weight: 650;
+  position: relative;
+}
+/* lightbox */
+.lbBack{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.68);
+  backdrop-filter: blur(10px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 22px;
+  z-index: 9999;
+}
+
+.lbInner{
+  position: relative;
+  max-width: min(1100px, 96vw);
+  max-height: 88vh;
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(10,14,24,.55);
+  box-shadow: 0 35px 90px rgba(0,0,0,.55);
+  overflow: hidden;
+}
+
+.lbImg{
+  width: 100%;
+  height: 88vh;
+  max-height: 88vh;
+  object-fit: contain; /* ключевое: НЕ режет и не тянет */
+  display:block;
+  background: rgba(0,0,0,.15);
+}
+
+.lbClose{
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.35);
+  color: rgba(255,255,255,.9);
+  cursor:pointer;
+}
+
+.lbClose:hover{ background: rgba(0,0,0,.55); }
+
+.lbHint{
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,.75);
+  font-size: 12px;
+  z-index: 10000;
+}
+
+/* photo cards (чтобы не растягивались странно) */
+.photoCard img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display:block;
+}
+/* FIX: bold in paragraphs should be inline */
+.item p b{ display: inline; font-size: inherit; }
+.chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+.chip{
+  border:1px solid var(--line);
+  background: rgba(15,23,42,.55);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.heroHead{ display:flex; gap:14px; align-items:center; margin-bottom: 6px; }
+
+.avatar{
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 55px rgba(0,0,0,.45), 0 0 0 6px rgba(99,102,241,.10);
+}
+
+.miniCard{
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  background: rgba(15,23,42,.45);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.miniTitle{
+  font-weight: 800;
+  color: var(--text);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.miniRow{
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 4px 0;
+}
+.miniRow b{ color: var(--text); font-weight: 700; }
