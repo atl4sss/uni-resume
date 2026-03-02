@@ -65,7 +65,7 @@ export default function Home() {
   const p = resume.person;
 
   const photos = {
-    // убираем robot-1 из robotics (он теперь в hero), оставляем 3 фотки
+    // remove robot-1 from robotics (hero uses kuka1), show only 3 photos
     robotics: gallery.filter((x) => x.category === "robotics" && x.id !== "robot-1").slice(0, 3),
     design: gallery.filter((x) => x.category === "graphic-design"),
     biomed: gallery.filter((x) => x.category === "biomedicine"),
@@ -131,6 +131,19 @@ export default function Home() {
         </div>
 
         <div className="stack">
+          {/* ABOUT (moved above highlights) */}
+          <div className="card">
+            <div className="inner">
+              <div className="sectionTitle" style={{ marginBottom: 8 }}>
+                <h2>About</h2>
+              </div>
+              <div className="item" style={{ borderTop: "none", paddingTop: 0 }}>
+                {resume.intro}
+              </div>
+            </div>
+          </div>
+
+          {/* HIGHLIGHTS */}
           <div className="card">
             <div className="inner">
               <div className="sectionTitle" style={{ marginBottom: 8 }}>
@@ -171,17 +184,6 @@ export default function Home() {
                 <PillLink href="#robotics">Robotics</PillLink>
                 <PillLink href="#ai-startups">AI & startups</PillLink>
                 <PillLink href="#graphic-design">Graphic design</PillLink>
-              </div>
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="inner">
-              <div className="sectionTitle" style={{ marginBottom: 8 }}>
-                <h2>About</h2>
-              </div>
-              <div className="item" style={{ borderTop: "none", paddingTop: 0 }}>
-                {resume.intro}
               </div>
             </div>
           </div>
